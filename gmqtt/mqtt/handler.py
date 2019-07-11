@@ -239,6 +239,7 @@ class MqttPackageHandler(EventCallback):
 
     def _handle_connack_packet(self, cmd, packet):
         self._connected.set()
+        print(cmd, packet)
 
         (flags, result) = struct.unpack("!BB", packet[:2])
 
